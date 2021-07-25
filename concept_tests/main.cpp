@@ -7,6 +7,7 @@
 #include "FunctionObjectTest.h"
 #include "LambdaExpressionTest.h"
 #include "SmartPointerTest.h"
+#include "ContainerTest.h"
 
 using namespace std;
 
@@ -48,7 +49,12 @@ int main() {
     // test->stop();
     // delete test;
  
-    test = new SmartPointerTest();
+    // test = new SmartPointerTest();
+    // test->start();
+    // test->stop();
+    // delete test;
+
+    test = new ContainerTest();
     test->start();
     test->stop();
     delete test;
