@@ -58,10 +58,11 @@ void quickSort(vector<T> &list, int start, int end) {
     if (start >= end) {
         return ;
     }
-    int pivotIdx = start;
+    int pivotIdx = start + (end - start) / 2; // Choose middle element as pivot
     // 讓[start]為pivot，並且將其搬至序列最後一位。
-    T pivot = list[pivotIdx];
+    T pivot = list[pivotIdx]; // Move pivot to last pos
     swap(list[pivotIdx], list[end]);
+    pivotIdx = start; // Reset pivotIdx to start
     for (int i = start; i < end; i++) {
         if (list[i] <= pivot) {
             swap(list[pivotIdx], list[i]);
