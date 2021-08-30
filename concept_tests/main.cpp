@@ -12,6 +12,7 @@
 #include "ContainerTest.h"
 #include "MapTest.h"
 #include "SizeOfTest.h"
+#include "QueueTest.h"
 
 using namespace std;
 
@@ -26,7 +27,8 @@ enum class Test {
     SMART_POINTER,
     CONTAINER,
     SIZE_OF,
-    MAP
+    MAP,
+    QUEUE
 };
 
 int main() {
@@ -43,8 +45,9 @@ int main() {
     tests.insert(make_pair(Test::CONTAINER, new ContainerTest()));
     tests.insert(make_pair(Test::SIZE_OF, new SizeOfTest()));
     tests.insert(make_pair(Test::MAP, new MapTest()));
+    tests.insert(make_pair(Test::QUEUE, new QueueTest()));
 
-    auto test = tests.find(Test::MAP);
+    auto test = tests.find(Test::QUEUE);
     if (test != tests.cend()) {
         test->second->start();
         test->second->stop();
