@@ -13,6 +13,7 @@
 #include "MapTest.h"
 #include "SizeOfTest.h"
 #include "QueueTest.h"
+#include "StackTest.h"
 
 using namespace std;
 
@@ -28,7 +29,8 @@ enum class Test {
     CONTAINER,
     SIZE_OF,
     MAP,
-    QUEUE
+    QUEUE,
+    STACK
 };
 
 int main() {
@@ -46,8 +48,9 @@ int main() {
     tests.insert(make_pair(Test::SIZE_OF, new SizeOfTest()));
     tests.insert(make_pair(Test::MAP, new MapTest()));
     tests.insert(make_pair(Test::QUEUE, new QueueTest()));
+    tests.insert(make_pair(Test::STACK, new StackTest()));
 
-    auto test = tests.find(Test::QUEUE);
+    auto test = tests.find(Test::STACK);
     if (test != tests.cend()) {
         test->second->start();
         test->second->stop();
