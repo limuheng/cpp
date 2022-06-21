@@ -53,7 +53,7 @@ int main() {
     tests.insert(make_pair(Test::STACK, new StackTest()));
     tests.insert(make_pair(Test::STRING, new StringTest()));
 
-    auto test = tests.find(Test::STRING);
+    auto test = tests.find(Test::SIZE_OF);
     if (test != tests.cend()) {
         test->second->start();
         test->second->stop();
