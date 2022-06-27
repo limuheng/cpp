@@ -4,7 +4,6 @@
 using namespace std;
 
 template<class T>
-
 class TempSort {
 public:
     static bool insertionSort(T array[], int length) {
@@ -26,6 +25,7 @@ public:
 
         return true;
     }
+
     static void printArray(T array[], int length) {
         cout << "[";
         for (int i = 0; i < length; i++) {
@@ -57,6 +57,13 @@ void TemplateTest::start() {
     TempSort<float>::insertionSort(floatArray, 10);
     cout << "Float array AFTER sort:" << endl;
     TempSort<float>::printArray(floatArray, 10);
+
+    double array2d[3][5] = {
+        {1.1, 2.2, 3.3, 4.4, 5.5},
+        {6.0, 7.0, 8.0, 9.0, 10.0},
+        {11.0, 12.0, 13.0, 14.0, 15.0}
+    };
+    print2dArray(array2d);
 }
 
 void TemplateTest::stop() {
