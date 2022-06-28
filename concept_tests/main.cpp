@@ -60,7 +60,7 @@ int main() {
     tests.insert(make_pair(Test::CSTRING, new CStringTest()));
 
 
-    auto test = tests.find(Test::CSTRING);
+    auto test = tests.find(Test::STRING);
     if (test != tests.cend()) {
         test->second->start();
         test->second->stop();
