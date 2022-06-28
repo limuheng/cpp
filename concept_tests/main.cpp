@@ -16,6 +16,7 @@
 #include "StackTest.h"
 #include "StringTest.h"
 #include "DynamicArrayTest.h"
+#include "CStringTest.h"
 
 using namespace std;
 
@@ -34,7 +35,8 @@ enum class Test {
     QUEUE,
     STACK,
     STRING,
-    DYNAMIC_ARRAY
+    DYNAMIC_ARRAY,
+    CSTRING
 };
 
 int main() {
@@ -55,9 +57,10 @@ int main() {
     tests.insert(make_pair(Test::STACK, new StackTest()));
     tests.insert(make_pair(Test::STRING, new StringTest()));
     tests.insert(make_pair(Test::DYNAMIC_ARRAY, new DynamicArrayTest()));
+    tests.insert(make_pair(Test::CSTRING, new CStringTest()));
 
 
-    auto test = tests.find(Test::STRING);
+    auto test = tests.find(Test::CSTRING);
     if (test != tests.cend()) {
         test->second->start();
         test->second->stop();
