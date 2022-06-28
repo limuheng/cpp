@@ -43,6 +43,8 @@ public:
 
 void StringTest::start() {
     cout << ">>> StringTest" << endl;
+
+    cout << "=== Leetcode - Medium - 151. Reverse Words in a String ===" << endl;
     string test = "  English is a West    Germanic language originally spoken   by the inhabitants of    early  medieval England";
     cout << "The original string: " << test << endl;
 
@@ -50,6 +52,27 @@ void StringTest::start() {
     string reversed = obj.reverseWords(test);
 
     cout << "The reversed words of test string: " << reversed << endl;
+
+    cout << "=== String Operations ===" << endl;
+    string a("123");
+    string b("456");
+    string c ;
+    cout << "string a: " << a << ", string b: " << b << endl;
+    c = a + b;
+    cout << "string a + b: " << c << endl;
+    
+    cout << "Is a equals to b ? " << ((a == b) ? "True" : "False") << endl;
+    cout << "Is a equals to \"123\" ? " << ((a == "123") ? "True" : "False") << endl;
+
+    a.append("A");
+    cout << "Append 'A' to a: " << a << endl;
+
+    a.replace(1, 1, "abc");
+    cout << "Replace '2' with \"abc\" in string a: " << a << endl;
+
+    char buffer[100] = { 0 };
+    a.copy(buffer, 4, 1);
+    cout << "Copy substring of a from index 1 with length 4 to buffer: " << buffer << endl;
 }
 
 void StringTest::stop() {

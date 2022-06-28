@@ -57,7 +57,7 @@ int main() {
     tests.insert(make_pair(Test::DYNAMIC_ARRAY, new DynamicArrayTest()));
 
 
-    auto test = tests.find(Test::DYNAMIC_ARRAY);
+    auto test = tests.find(Test::STRING);
     if (test != tests.cend()) {
         test->second->start();
         test->second->stop();
