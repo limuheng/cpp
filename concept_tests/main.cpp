@@ -17,6 +17,7 @@
 #include "StringTest.h"
 #include "DynamicArrayTest.h"
 #include "CStringTest.h"
+#include "CMemFuncTest.h"
 
 using namespace std;
 
@@ -36,7 +37,8 @@ enum class Test {
     STACK,
     STRING,
     DYNAMIC_ARRAY,
-    CSTRING
+    CSTRING,
+    CMEMFUNC
 };
 
 int main() {
@@ -58,9 +60,10 @@ int main() {
     tests.insert(make_pair(Test::STRING, new StringTest()));
     tests.insert(make_pair(Test::DYNAMIC_ARRAY, new DynamicArrayTest()));
     tests.insert(make_pair(Test::CSTRING, new CStringTest()));
+    tests.insert(make_pair(Test::CMEMFUNC, new CMemFuncTest()));
 
 
-    auto test = tests.find(Test::STRING);
+    auto test = tests.find(Test::CMEMFUNC);
     if (test != tests.cend()) {
         test->second->start();
         test->second->stop();
