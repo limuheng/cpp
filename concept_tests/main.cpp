@@ -18,6 +18,7 @@
 #include "DynamicArrayTest.h"
 #include "CStringTest.h"
 #include "CMemFuncTest.h"
+#include "FileIOTest.h"
 
 using namespace std;
 
@@ -38,7 +39,8 @@ enum class Test {
     STRING,
     DYNAMIC_ARRAY,
     CSTRING,
-    CMEMFUNC
+    CMEMFUNC,
+    FILE_IO
 };
 
 int main() {
@@ -61,9 +63,10 @@ int main() {
     tests.insert(make_pair(Test::DYNAMIC_ARRAY, new DynamicArrayTest()));
     tests.insert(make_pair(Test::CSTRING, new CStringTest()));
     tests.insert(make_pair(Test::CMEMFUNC, new CMemFuncTest()));
+    tests.insert(make_pair(Test::FILE_IO, new FileIOTest()));
 
 
-    auto test = tests.find(Test::CMEMFUNC);
+    auto test = tests.find(Test::FILE_IO);
     if (test != tests.cend()) {
         test->second->start();
         test->second->stop();
